@@ -15,7 +15,7 @@ RUN \
  echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections &&\
  apt-get -y --no-install-recommends install ca-certificates gnupg git subversion imagemagick openssh-client curl software-properties-common gettext zip unzip default-mysql-server default-mysql-client apt-transport-https ruby python python3 perl memcached geoip-database make ffmpeg &&\
  curl -sSL https://deb.nodesource.com/setup_10.x | bash - &&\
- apt-get -y --no-install-recommends install php7.4-apcu php7.4-bcmath php7.4-cli php7.4-curl php7.4-gd php7.4-geoip php7.4-gettext php7.4-imagick php7.4-intl php7.4-json php7.4-mbstring php7.4-mysql php7.4-pgsql php7.4-sqlite3 php7.4-xdebug php7.4-xml php7.4-xmlrpc php7.4-zip php7.4-memcached nodejs &&\
+ apt-get -y --no-install-recommends install php-memcached php7.4-mysql php7.4-pgsql php-redis php7.4-sqlite3 php-xdebug php7.4-bcmath php7.4-gd php-imagick php7.4-soap php-ssh2 php-yaml nodejs &&\
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /var/log/*
 
 RUN \
