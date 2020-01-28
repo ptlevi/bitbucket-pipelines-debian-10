@@ -7,7 +7,7 @@ ENV LANGUAGE en_US:en
 
 RUN \
  apt-get update &&\
- apt-get -y --no-install-recommends install curl locales apt-utils &&\
+ apt-get -y --no-install-recommends install curl wget locales apt-utils &&\
  echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen &&\
  locale-gen en_US.UTF-8 &&\
  /usr/sbin/update-locale LANG=en_US.UTF-8 &&\
