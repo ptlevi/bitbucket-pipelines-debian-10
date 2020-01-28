@@ -17,7 +17,7 @@ RUN \
  curl -sSL https://deb.nodesource.com/setup_10.x | bash - &&\
  wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add - &&\
  echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php7.x.list &&\
- apt-get update
+ apt-get update &&\
  apt-get -y --no-install-recommends install php7.4-apcu php7.4-bcmath php7.4-cli php7.4-curl php7.4-gd php7.4-geoip php7.4-gettext php7.4-imagick php7.4-intl php7.4-json php7.4-mbstring php7.4-mysql php7.4-pgsql php7.4-sqlite3 php7.4-xdebug php7.4-xml php7.4-xmlrpc php7.4-zip php7.4-memcached nodejs &&\
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /var/log/*
 
