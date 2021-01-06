@@ -16,15 +16,15 @@ RUN \
  apt-get -y --no-install-recommends install ca-certificates gnupg git subversion imagemagick openssh-client curl software-properties-common gettext zip unzip default-mysql-server default-mysql-client apt-transport-https ruby python python3 perl memcached geoip-database make ffmpeg gnupg2 &&\
  curl -sSL https://deb.nodesource.com/setup_10.x | bash - &&\
  wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add - &&\
- echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php8.x.list &&\
+ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php7.x.list &&\
  apt-get update &&\
- apt-get -y --no-install-recommends install php8.0-apcu php8.0-bcmath php8.0-cli php8.0-curl php8.0-gd php8.0-gettext php8.0-imagick php8.0-intl php8.0-mbstring php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-xdebug php8.0-xml php8.0-zip php8.0-memcached php8.0-redis nodejs ghostscript &&\
+apt-get -y --no-install-recommends install php7.4-apcu php7.4-bcmath php7.4-cli php7.4-curl php7.4-gd php7.4-geoip php7.4-gettext php7.4-imagick php7.4-intl php7.4-json php7.4-mbstring php7.4-mysql php7.4-pgsql php7.4-sqlite3 php7.4-xdebug php7.4-xml php7.4-xmlrpc php7.4-zip php7.4-memcached php7.4-redis nodejs ghostscript &&\
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /var/log/*
 
 RUN \
- sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/8.0/cli/php.ini &&\
- echo "\nmemory_limit=-1" >> /etc/php/8.0/cli/php.ini &&\
- echo "xdebug.max_nesting_level=250" >> /etc/php/8.0/mods-available/xdebug.ini
+ sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/7.4/cli/php.ini &&\
+ echo "\nmemory_limit=-1" >> /etc/php/7.4/cli/php.ini &&\
+ echo "xdebug.max_nesting_level=250" >> /etc/php/7.4/mods-available/xdebug.ini
 
 RUN \
  curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin &&\
