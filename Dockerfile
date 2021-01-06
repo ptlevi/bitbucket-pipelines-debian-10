@@ -18,7 +18,7 @@ RUN \
  wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add - &&\
  echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php8.x.list &&\
  apt-get update &&\
- apt-get -y --no-install-recommends install php8.0-apcu php8.0-bcmath php8.0-cli php8.0-curl php8.0-gd php8.0-gettext php8.0-imagick php8.0-intl php8.0-json php8.0-mbstring php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-xdebug php8.0-xml php8.0-xmlrpc php8.0-zip php8.0-memcached php8.0-redis nodejs ghostscript &&\
+ apt-get -y --no-install-recommends install php8.0-apcu php8.0-bcmath php8.0-cli php8.0-curl php8.0-gd php8.0-gettext php8.0-imagick php8.0-intl php8.0-mbstring php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-xdebug php8.0-xml php8.0-zip php8.0-memcached php8.0-redis nodejs ghostscript &&\
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /var/log/*
 
 RUN \
