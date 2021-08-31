@@ -13,7 +13,7 @@ RUN \
  /usr/sbin/update-locale LANG=en_US.UTF-8 &&\
  echo "mysql-server mysql-server/root_password password root" | debconf-set-selections &&\
  echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections &&\
- apt-get -y --no-install-recommends install ca-certificates gnupg git subversion openssh-client curl software-properties-common gettext zip unzip default-mysql-server default-mysql-client apt-transport-https memcached make &&\
+ apt-get -y --no-install-recommends install ca-certificates gnupg git subversion openssh-client curl software-properties-common gettext zip unzip default-mysql-server default-mysql-client apt-transport-https memcached make perl &&\
  wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add - &&\
  echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php8.x.list &&\
  apt-get update &&\
