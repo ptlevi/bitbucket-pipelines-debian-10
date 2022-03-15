@@ -18,12 +18,12 @@ RUN \
  wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add - &&\
  echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php7.x.list &&\
  apt-get update &&\
- apt-get -y --no-install-recommends install php8.0-apcu php8.0-bcmath php8.0-cli php8.0-curl php8.0-gd php8.0-gettext php8.0-intl php8.0-mbstring php8.0-mysql php8.0-pgsql php8.0-sqlite3 php8.0-xml php8.0-zip php8.0-memcached php8.0-redis &&\
+ apt-get -y --no-install-recommends install php8.1-apcu php8.1-bcmath php8.1-cli php8.1-curl php8.1-gd php8.1-gettext php8.1-intl php8.1-mbstring php8.1-mysql php8.1-pgsql php8.1-sqlite3 php8.1-xml php8.1-zip php8.1-memcached php8.1-redis &&\
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /var/log/*
 
 RUN \
- sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/8.0/cli/php.ini &&\
- echo "\nmemory_limit=-1" >> /etc/php/8.0/cli/php.ini
+ sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/8.1/cli/php.ini &&\
+ echo "\nmemory_limit=-1" >> /etc/php/8.1/cli/php.ini
 
 RUN \
  curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin &&\
