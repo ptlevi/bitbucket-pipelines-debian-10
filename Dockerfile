@@ -28,3 +28,7 @@ RUN \
  curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin &&\
  curl -sSL https://phar.phpunit.de/phpunit.phar -o /usr/bin/phpunit  && chmod +x /usr/bin/phpunit &&\
  rm -rf /root/.npm /tmp/* /var/tmp/* /var/lib/apt/lists/* /var/log/*
+
+RUN \
+ curl -sL https://deb.nodesource.com/setup_14.x | sudo bash - &&\
+ apt-get -y install nodejs:14
