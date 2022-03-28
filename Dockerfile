@@ -22,7 +22,7 @@ RUN \
 
 RUN \
  sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/8.0/cli/php.ini &&\
- echo "\nmemory_limit=-1" >> /etc/php/8.0/cli/php.ini &&\
+ echo "\nmemory_limit=-1" >> /etc/php/8.0/cli/php.ini
 
 RUN \
  curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin &&\
