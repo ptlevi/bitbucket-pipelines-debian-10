@@ -30,5 +30,5 @@ RUN \
  rm -rf /root/.npm /tmp/* /var/tmp/* /var/lib/apt/lists/* /var/log/*
 
 RUN \
- curl -sL https://deb.nodesource.com/setup_14.x | sudo bash - &&\
- apt-get -y install nodejs:14
+ curl -sL https://deb.nodesource.com/setup_14.x | bash - &&\
+ apt-get -y install nodejs
