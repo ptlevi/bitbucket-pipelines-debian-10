@@ -4,6 +4,7 @@ MAINTAINER Damien Debin <damien.debin@smartapps.fr>
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL en_US.UTF-8
 ENV LANGUAGE en_US:en
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN \
  apt-get update &&\
